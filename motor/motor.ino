@@ -5,11 +5,6 @@ const int pinENA = 6;   // PWM
 int velocidad = 140;    // Velocidad por defecto
 
 
-
-int velocidad = 150;    // Velocidad por defecto
-
-
-
 // --- FUNCIONES PARA CONTROLAR MOTOR ---
 
 void giroHorario(int vel) {
