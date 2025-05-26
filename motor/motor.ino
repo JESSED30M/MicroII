@@ -4,7 +4,7 @@ const int pinENA = 6;   // PWM
 
 
 
-int velocidad = 120;    // Velocidad por defecto
+int velocidad = 150;    // Velocidad por defecto
 
 
 // --- FUNCIONES PARA CONTROLAR MOTOR ---
