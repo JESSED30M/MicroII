@@ -40,8 +40,8 @@ void setup() {
   // --- ACTIVA SOLO UNA OPCIÓN A LA VEZ (descomenta para probar) ---
   
   //giroHorario(velocidad);         // <-- Giro horario
-  //giroAntiHorario(velocidad);   // <-- Giro antihorario
-  detenerMotor();                // <-- Detener motor
+  giroAntiHorario(velocidad);   // <-- Giro antihorario
+  //detenerMotor();                // <-- Detener motor
 }
 
 void loop() {
