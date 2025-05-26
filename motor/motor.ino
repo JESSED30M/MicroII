@@ -2,7 +2,7 @@ const int pinIN1 = 4;   // Sentido horario
 const int pinIN2 = 5;   // Sentido antihorario
 const int pinENA = 6;   // PWM
 
-int velocidad = 10;    // Velocidad por defecto
+int velocidad = 150;    // Velocidad por defecto
 
 // --- FUNCIONES PARA CONTROLAR MOTOR ---
 
@@ -31,7 +31,7 @@ void detenerMotor() {
 
 void setup() {
   pinMode(pinIN1, OUTPUT);
-  pinMode(pinIN2, OUTPUT);
+  pinMode(pinIN2, OUTPUT);u
   pinMode(pinENA, OUTPUT);
 
   Serial.begin(9600);
