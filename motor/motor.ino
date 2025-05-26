@@ -2,7 +2,7 @@ const int pinIN1 = 4;   // Sentido horario
 const int pinIN2 = 5;   // Sentido antihorario
 const int pinENA = 6;   // PWM
 
-int velocidad = 50;    // Velocidad por defecto
+int velocidad = 120;    // Velocidad por defecto
 
 // --- FUNCIONES PARA CONTROLAR MOTOR ---
 
