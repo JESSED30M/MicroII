@@ -3,8 +3,7 @@ const int pinIN2 = 5;   // Sentido antihorario
 const int pinENA = 6;   // PWM
 
 
-int velocidad = 170;    // Velocidad por defecto
-=======
+
 int velocidad = 120;    // Velocidad por defecto
 
 
