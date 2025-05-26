@@ -31,7 +31,7 @@ void detenerMotor() {
 
 void setup() {
   pinMode(pinIN1, OUTPUT);
-  pinMode(pinIN2, OUTPUT);u
+  pinMode(pinIN2, OUTPUT);
   pinMode(pinENA, OUTPUT);
 
   Serial.begin(9600);
@@ -39,9 +39,9 @@ void setup() {
 
   // --- ACTIVA SOLO UNA OPCIÓN A LA VEZ (descomenta para probar) ---
   
-  giroHorario(velocidad);         // <-- Giro horario
+  //giroHorario(velocidad);         // <-- Giro horario
   //giroAntiHorario(velocidad);   // <-- Giro antihorario
-  //detenerMotor();                // <-- Detener motor
+  detenerMotor();                // <-- Detener motor
 }
 
 void loop() {
