@@ -1,39 +1,40 @@
 const int pinIN1 = 4;   // Sentido horario
 const int pinIN2 = 5;   // Sentido antihorario
-const int pinENA = 6;   // PWM
+const int pinENA = 6;   // PWM para velocidad
 
 int velocidad = 255;    // Velocidad por defecto (máxima)
-char comando;
 
 void setup() {
   pinMode(pinIN1, OUTPUT);
   pinMode(pinIN2, OUTPUT);
   pinMode(pinENA, OUTPUT);
+
+  // ------------ CONFIGURA AQUÍ EL COMPORTAMIENTO DESEADO ------------
   
-  Serial.begin(9600);
-  Serial.println("Listo. Envia 'h' (horario), 'a' (antihorario), '0'–'9' (velocidad)");
+  ajustarVelocidad(150);  // Cambia valor entre 0 y 255
+  giroHorario();          // O cambia por giroAntihorario();
+
+  // -------------------------------------------------------------------
 }
 
 void loop() {
-  if (Serial.available() > 0) {
-    comando = Serial.read();
-    
-    if (comando == 'h') {
-      digitalWrite(pinIN1, HIGH);
-      digitalWrite(pinIN2, LOW);
-      Serial.println("Giro horario");
-    } else if (comando == 'a') {
-      digitalWrite(pinIN1, LOW);
-      digitalWrite(pinIN2, HIGH);
-      Serial.println("Giro antihorario");
-    } else if (comando >= '0' && comando <= '9') {
-      // Mapea '0'-'9' a 0–255
-      velocidad = map(comando - '0', 0, 9, 0, 255);
-      analogWrite(pinENA, velocidad);
-      Serial.print("Velocidad ajustada a: ");
-      Serial.println(velocidad);
-    } else {
-      Serial.println("Comando no válido");
-    }
-  }
+  // Aquí podrías agregar más lógica si quieres
+}
+
+// Función para girar en sentido horario
+void giroHorario() {
+  digitalWrite(pinIN1, HIGH);
+  digitalWrite(pinIN2, LOW);
+}
+
+// Función para girar en sentido antihorario
+void giroAntihorario() {
+  digitalWrite(pinIN1, LOW);
+  digitalWrite(pinIN2, HIGH);
+}
+
+// Función para ajustar la velocidad del motor
+void ajustarVelocidad(int v) {
+  velocidad = constrain(v, 0, 255); // Asegura que esté en el rango válido
+  analogWrite(pinENA, velocidad);
 }
